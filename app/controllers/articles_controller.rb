@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destoy]
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
 
 def index
   @articles = Article.all
@@ -44,6 +44,7 @@ def destroy
   @article.destroy
 
   flash[:danger] = "Article succesfully deleted"
+  redirect_to articles_path
 end
 
   private
